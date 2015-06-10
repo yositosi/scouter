@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'hashie'
   spec.add_dependency 'thor'
   spec.add_dependency 'parallel'
+  spec.add_dependency 'curb'
   spec.add_development_dependency 'bundler', '~> 1.7'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'pry'

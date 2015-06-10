@@ -5,12 +5,14 @@ require 'open-uri'
 require 'json'
 require 'hashie/mash'
 require 'parallel'
+require 'curb'
 
 # Scouter Class/Module
 require 'scouter/base/version'
 require 'scouter/base/object'
 require 'scouter/base/single_url_api'
 require 'scouter/base/multi_url_api'
+require 'scouter/base/parallel_url_api'
 require 'scouter/buffer'
 require 'scouter/facebook'
 require 'scouter/feedly'
@@ -42,6 +44,7 @@ module Scouter
   # @param [Array or nil] service service list to get count
   # @return [Hashie::Mash, Hashie::Mash] URL & count hash, Error
   def self.get_count(urls, services = SERVICES)
+
     results, errors = [], Hashie::Mash.new()
 
     Parallel.each(services, in_threads: services.count) do |service|
