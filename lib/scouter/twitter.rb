@@ -12,7 +12,6 @@ module Scouter
         escaped_url = URI.escape(u)
         "#{END_POINT}/1/urls/count.json?url=#{escaped_url}"
       }
-      puts urls
       urls
     end
 
